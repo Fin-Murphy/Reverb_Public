@@ -1,8 +1,11 @@
+
+To understand the purpose and goals of Reverb_, visit our landing page at  https://getreverb.vercel.app/
+
+Here is a demo of the working Reverb application: 
+
 This is the public version of the REVERB repository. 
+Since the Reverb codebase contains potential sensitive info, it is not available at this time
 
-Since Reverb is a soon-to-be production application, codebase is not available right now. 
 
-Reverb is an AI-powered productivity application. If you are interested, View our homepage here:
 
-https://getreverb.vercel.app/
 
