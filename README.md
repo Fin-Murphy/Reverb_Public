@@ -8,7 +8,7 @@
 This a public version of the REVERB repository. 
 Since the Reverb codebase contains potential sensitive info, it is not available at this time
 
-Some interesting technical bits & bobs:
+# Some interesting technical bits & bobs:
 
 ### Splicing TTS audio at the byte level
 
