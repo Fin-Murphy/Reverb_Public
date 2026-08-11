@@ -8,7 +8,7 @@ Here is a demo of Reverb
 
 Here is the raw audio generated in the demo:
 <p align="center" width="100%">
-<video src="" width="80%" controls></video>
+<video src="" width="50%" controls></video>
 </p>
 
 This is the public version of the REVERB repository. 
