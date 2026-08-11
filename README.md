@@ -1,15 +1,16 @@
 
-To understand the purpose and goals of Reverb_, visit our landing page at  https://getreverb.vercel.app/
+# Visit the Reverb landing page at  https://getreverb.vercel.app/
 
-Here is a demo of Reverb: [https://youtu.be/SP142rXVtIM](https://youtu.be/SP142rXVtIM)
+# Reverb_ Demo: [https://youtu.be/SP142rXVtIM](https://youtu.be/SP142rXVtIM)
 
-Here is the raw audio generated in the demo: [https://youtu.be/XIxWi8a-220](https://youtu.be/XIxWi8a-220)
+# Demo raw audio: [https://youtu.be/XIxWi8a-220](https://youtu.be/XIxWi8a-220)
 
-This is the public version of the REVERB repository. 
+This a public version of the REVERB repository. 
 Since the Reverb codebase contains potential sensitive info, it is not available at this time
 
+Some interesting technical bits & bobs:
 
-## Splicing TTS audio at the byte level
+### Splicing TTS audio at the byte level
 
 The most interesting problem in the app. The TTS Worker takes roughly five seconds per email; a ten-newsletter brief sent as one request blows past the request timeout. So the brief is split into independently speakable segments — greeting, calendar block, each email, outro — synthesized **in parallel**, and the returned WAV blobs are spliced back into one file client-side.
 
@@ -24,7 +25,7 @@ The result: wall-clock synthesis time is bounded by the *slowest single segment*
 
 ---
 
-## Turning newsletter HTML into plaintext
+### Turning newsletter HTML into plaintext
 
 Marketing email is the worst input format there is, and it has to be clean before it reaches an LLM. `GmailLoader` requests `format=full` and then:
 
@@ -46,7 +47,7 @@ The ID listing pages through `nextPageToken` at 500/page with no cap; only the r
 
 ---
 
-## Authentication
+### Authentication
 
 **Google — incremental authorization.** Reverb never asks for Gmail and Calendar access at sign-in. Each integration requests its own scope at the moment the user taps *Connect*, which keeps the initial consent screen to basic profile only. `AuthenticationViewModel.connect(scope:)` picks the right mechanism based on current state:
 
@@ -68,7 +69,7 @@ No client secret ships in the binary; the iOS OAuth client ID in `Info.plist` is
 
 ---
 
-## Current state
+### Current state
 
 Wired end-to-end: Google sign-in with incremental scopes, Calendar and Gmail ingestion, summarization, parallel TTS with client-side splicing, briefing persistence and library playback, sender allowlist management, onboarding, and settings.
 
